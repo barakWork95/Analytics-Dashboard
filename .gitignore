@@ -1,0 +1,8 @@
+# Frontend
+analytics-dashboard/node_modules
+analytics-dashboard/.env
+
+# Backend
+analytics-backend/venv
+analytics-backend/__pycache__
+analytics-backend/**/__pycache__
