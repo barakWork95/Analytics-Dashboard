@@ -25,11 +25,11 @@ export function DataTable({ rows }: DataTableProps) {
   return (
     <div className="bg-white rounded-2xl shadow-sm border border-gray-100">
       {/* Header */}
-      <div className="grid grid-cols-6 gap-4 px-6 py-3 border-b border-gray-100 text-sm font-semibold text-gray-500">
+      <div className="grid grid-cols-3 md:grid-cols-6 gap-2 px-4 py-3 border-b border-gray-100 text-sm font-semibold text-gray-500">
         <span>Time</span>
         <span>User ID</span>
-        <span>Event</span>
-        <span>Region</span>
+        <span className="hidden md:block">Event</span>
+        <span className="hidden md:block">Region</span>
         <span>Value</span>
         <span>Status</span>
       </div>
@@ -56,12 +56,16 @@ export function DataTable({ rows }: DataTableProps) {
                   right: 0,
                   height: `${virtualRow.size}px`,
                 }}
-                className="grid grid-cols-6 gap-4 px-6 items-center text-sm border-b border-gray-50"
+                className="grid grid-cols-3 md:grid-cols-6 gap-2 px-4 items-center text-sm border-b border-gray-50"
               >
                 <span className="text-gray-500">{row.timestamp}</span>
-                <span className="text-gray-700">{row.userId}</span>
-                <span className="text-gray-700">{row.event}</span>
-                <span className="text-gray-700">{row.region}</span>
+                <span className="text-gray-700 truncate">{row.userId}</span>
+                <span className="text-gray-700 hidden md:block">
+                  {row.event}
+                </span>
+                <span className="text-gray-700 hidden md:block">
+                  {row.region}
+                </span>
                 <span className="text-gray-700">
                   ${row.value.toLocaleString()}
                 </span>
