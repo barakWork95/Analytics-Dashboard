@@ -3,7 +3,7 @@ import { useDashboardStore } from "../store/dashboardStore";
 import type { WSMessage } from "../types";
 import type { KPIMetric, DataRow } from "../types";
 
-const WS_URL = "ws://localhost:8000/ws";
+const WS_URL = "wss://analytics-dashboard-production-1bae.up.railway.app/ws";
 const INITIAL_RETRY_DELAY = 1000;
 const MAX_RETRY_DELAY = 30000;
 
